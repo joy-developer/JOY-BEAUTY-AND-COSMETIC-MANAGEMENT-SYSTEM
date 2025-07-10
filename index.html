@@ -3,335 +3,700 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joy Beauty & Cosmetic Management System</title>
+    <title>Joy Beauty and Cosmetic</title>
     <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #ff6b9d;
-            --secondary-color: #ffd6e5;
-            --dark-color: #333;
-            --light-color: #f8f9fa;
+            --primary-pink: #ff85a2;
+            --dark-pink: #e76f8c;
+            --light-pink: #fff0f3;
+            --teal: #2ec4b6;
+            --purple: #9b5de5;
+            --gold: #ffd166;
+            --dark-blue: #26547c;
+            --light-gray: #f8f9fa;
+            --dark-gray: #343a40;
         }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Arial', sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fff9fb;
+            background-color: var(--light-gray);
+            color: var(--dark-gray);
+            line-height: 1.6;
         }
         
-        .navbar-brand {
+        header {
+            background: linear-gradient(135deg, var(--primary-pink), var(--purple));
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
             font-weight: 700;
-            color: var(--primary-color) !important;
+            display: flex;
+            align-items: center;
         }
         
-        .sidebar {
-            background: linear-gradient(180deg, #ff6b9d, #ff8fab);
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+            position: relative;
+        }
+        
+        nav ul li a {
             color: white;
-            height: 100vh;
-            position: fixed;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
         }
         
-        .sidebar .nav-link {
-            color: white;
-            margin-bottom: 5px;
-            border-radius: 5px;
+        nav ul li a:hover {
+            color: var(--gold);
         }
         
-        .sidebar .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
         }
         
-        .sidebar .nav-link.active {
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .login-btn {
             background-color: white;
-            color: var(--primary-color) !important;
+            color: var(--primary-pink);
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
             font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
         
-        .main-content {
-            margin-left: 250px;
-            padding: 20px;
+        .login-btn:hover {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            text-decoration: none;
         }
         
-        .card {
-            border-radius: 15px;
+        .hero {
+            text-align: center;
+            padding: 5rem 1rem;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, var(--light-gray));
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeIn 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .book-btn {
+            background-color: var(--primary-pink);
+            color: white;
             border: none;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-        
-        .card-header {
-            background-color: white;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-size: 1rem;
             font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 133, 162, 0.4);
+            animation: fadeIn 2s ease;
         }
         
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
+        .book-btn:hover {
+            background-color: var(--dark-pink);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 133, 162, 0.6);
         }
         
-        .btn-outline-primary {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
+        .services {
+            padding: 4rem 2rem;
+            text-align: center;
+            background-color: var(--light-gray);
         }
         
-        .btn-outline-primary:hover {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary-pink);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-pink), var(--purple));
+            bottom: -10px;
+            left: 25%;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .service-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-card h3 {
+            color: var(--primary-pink);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .service-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .products {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--light-pink), white);
+            text-align: center;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .product-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-info h3 {
+            color: var(--dark-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-info .price {
+            color: var(--primary-pink);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonials {
+            padding: 4rem 2rem;
+            background-color: white;
+            text-align: center;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-card .quote {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        
+        .testimonial-card .client {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .client-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+        
+        .client-info h4 {
+            color: var(--primary-pink);
+            margin-bottom: 0.2rem;
+        }
+        
+        .client-info p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        .about {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--teal), var(--dark-blue));
+            color: white;
+            text-align: center;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .cta {
+            padding: 4rem 2rem;
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+                        url('https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1888&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-pink);
+        }
+        
+        .cta p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--dark-gray), #111);
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+        }
+        
+        .footer-column h3 {
+            color: var(--primary-pink);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--primary-pink);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            background-color: var(--primary-pink);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--dark-pink);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .logo {
+                margin-bottom: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="images/logo.png" alt="Logo" style="width:48px; object-fit:contain; margin-right:8px; vertical-align:middle;">Joy Beauty & Cosmetics
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-                            <i class="fas fa-user-circle me-1"></i> Admin Joy
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i> Profile</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i> Settings</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i> Logout</a></li>
-                        </ul>
-                    </li>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Joy Beauty Logo">
+            Joy Beauty & Cosmetic
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="pages/user/login.html" class="login-btn">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Your Beauty, Our Passion</h1>
+        <p>Discover our premium beauty services and cosmetic products designed to enhance your natural beauty</p>
+        <a href="pages/user/login.html"><button class="book-btn">Book an Appointment</button></a>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                     alt="Skincare Treatments" class="service-img">
+                <div class="service-content">
+                    <h3>Skincare Treatments</h3>
+                    <p>Professional facials, chemical peels, microdermabrasion, and anti-aging treatments tailored to your skin's needs.</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80" 
+                     alt="Hair Services" class="service-img">
+                <div class="service-content">
+                    <h3>Hair Services</h3>
+                    <p>Cut, color, styling, keratin treatments, and extensions for all hair types with premium products.</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                     alt="Makeup Artistry" class="service-img">
+                <div class="service-content">
+                    <h3>Makeup Artistry</h3>
+                    <p>Professional makeup for weddings, special occasions, or just because - enhancing your natural features.</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                     alt="Spa Treatments" class="service-img">
+                <div class="service-content">
+                    <h3>Spa Treatments</h3>
+                    <p>Relaxing massages, body wraps, and detox treatments in our serene spa environment.</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1588&q=80" 
+                     alt="Vitamin C Serum" class="product-img">
+                <div class="product-info">
+                    <h3>Vitamin C Brightening Serum</h3>
+                    <p class="price">Ksh405.00</p>
+                    <button class="book-btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                     alt="Hair Care Kit" class="product-img">
+                <div class="product-info">
+                    <h3>Luxury Hair Care Kit</h3>
+                    <p class="price">Ksh420.00</p>
+                    <button class="book-btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                     alt="Makeup Palette" class="product-img">
+                <div class="product-info">
+                    <h3>Pro Makeup Palette</h3>
+                    <p class="price">Ksh550.00</p>
+                    <button class="book-btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://www.eve.co.ke/cdn/shop/files/s2734028-av-4-zoom_1024x1024@2x.webp?v=1714395915" 
+                     alt="Body Lotion" class="product-img">
+                <div class="product-info">
+                    <h3>Hydrating Body Lotion</h3>
+                    <p class="price">Ksh270.00</p>
+                    <button class="book-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title">Client Testimonials</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p class="quote">"The facial treatment I received was amazing! My skin has never felt so refreshed and glowing. The staff is incredibly professional and knowledgeable."</p>
+                <div class="client">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Sarah M." class="client-img">
+                    <div class="client-info">
+                        <h4>Sarah M.</h4>
+                        <p>Regular Client</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"I've been coming to Joy Beauty for my hair for 2 years now and I wouldn't go anywhere else. They always know exactly what will suit me best."</p>
+                <div class="client">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                         alt="James K." class="client-img">
+                    <div class="client-info">
+                        <h4>James K.</h4>
+                        <p>Hair Client</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"The bridal makeup was perfect! I felt beautiful and the makeup lasted all day through tears and dancing. Highly recommend!"</p>
+                <div class="client">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80" 
+                         alt="Emily T." class="client-img">
+                    <div class="client-info">
+                        <h4>Emily T.</h4>
+                        <p>Bride</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2 class="section-title" style="color: white;">About Joy Beauty</h2>
+        <div class="about-content">
+            <p>Founded in 2024, Joy Beauty and Cosmetic has been dedicated to providing exceptional beauty services and premium cosmetic products to our valued clients in Meru and beyond.</p>
+            <p>Our team of certified professionals stays current with the latest techniques and trends to ensure you receive the highest quality services in a welcoming and relaxing environment.</p>
+            <button class="book-btn" style="background-color: var(--gold); color: #333;">Learn More</button>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Ready to Experience Joy Beauty?</h2>
+        <p>Book your appointment today and discover why our clients keep coming back</p>
+        <a href="pages/user/login.html"><button class="book-btn">Book Now</button></a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#about">About Us</a></li>
                 </ul>
             </div>
-        </div>
-    </nav>
-
-    <!-- Sidebar -->
-    <div class="sidebar col-md-3 col-lg-2 d-md-block p-3">
-        <div class="text-center mb-4">
-            <img src="images/user.png" width="64" class="rounded-circle mb-2" alt="Profile">
-            <h6 class="mb-0">Admin Joy</h6>
-            <small class="text-white-50">Administrator</small>
-        </div>
-        
-        <hr class="bg-white">
-        
-        <ul class="nav flex-column">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">
-                    <i class="fas fa-tachometer-alt me-2"></i> Dashboard
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-users me-2"></i> Clients
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-calendar-alt me-2"></i> Appointments
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-shopping-bag me-2"></i> Products
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-box-open me-2"></i> Inventory
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-chart-line me-2"></i> Reports
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-cog me-2"></i> Settings
-                </a>
-            </li>
-        </ul>
-    </div>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Dashboard</h1>
-            <div class="btn-toolbar mb-2 mb-md-0">
-                <div class="btn-group me-2">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-                </div>
-                <button type="button" class="btn btn-sm btn-primary">
-                    <i class="fas fa-plus me-1"></i> New Appointment
-                </button>
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Skincare</a></li>
+                    <li><a href="#">Hair Services</a></li>
+                    <li><a href="#">Makeup</a></li>
+                    <li><a href="#">Spa Treatments</a></li>
+                </ul>
             </div>
-        </div>
-
-        <!-- Stats Cards -->
-        <div class="row mb-4">
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <h6 class="text-muted mb-2">Today's Appointments</h6>
-                                <h3 class="mb-0">12</h3>
-                            </div>
-                            <div class="bg-primary bg-opacity-10 p-3 rounded">
-                                <i class="fas fa-calendar-check text-primary"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Beauty St, Meru Town</li>
+                    <li><i class="fas fa-phone"></i> +254 702 345 078</li>
+                    <li><i class="fas fa-envelope"></i> info@joybeauty.com</li>
+                </ul>
             </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <h6 class="text-muted mb-2">New Clients</h6>
-                                <h3 class="mb-0">5</h3>
-                            </div>
-                            <div class="bg-success bg-opacity-10 p-3 rounded">
-                                <i class="fas fa-user-plus text-success"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <h6 class="text-muted mb-2">Products Low Stock</h6>
-                                <h3 class="mb-0">3</h3>
-                            </div>
-                            <div class="bg-warning bg-opacity-10 p-3 rounded">
-                                <i class="fas fa-exclamation-triangle text-warning"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <h6 class="text-muted mb-2">Monthly Revenue</h6>
-                                <h3 class="mb-0">$8,245</h3>
-                            </div>
-                            <div class="bg-info bg-opacity-10 p-3 rounded">
-                                <i class="fas fa-dollar-sign text-info"></i>
-                            </div>
-                        </div>
-                    </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
                 </div>
             </div>
         </div>
-
-        <!-- Recent Appointments -->
-        <div class="card mb-4">
-            <div class="card-header">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0">Recent Appointments</h5>
-                    <a href="#" class="btn btn-sm btn-outline-primary">View All</a>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Client</th>
-                                <th>Service</th>
-                                <th>Date</th>
-                                <th>Time</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Sarah Johnson</td>
-                                <td>Facial Treatment</td>
-                                <td>May 15, 2023</td>
-                                <td>10:00 AM</td>
-                                <td><span class="badge bg-success">Completed</span></td>
-                                <td>
-                                    <button class="btn btn-sm btn-outline-primary"><i class="fas fa-eye"></i></button>
-                                    <button class="btn btn-sm btn-outline-secondary"><i class="fas fa-edit"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Michael Brown</td>
-                                <td>Hair Coloring</td>
-                                <td>May 15, 2023</td>
-                                <td>11:30 AM</td>
-                                <td><span class="badge bg-warning">In Progress</span></td>
-                                <td>
-                                    <button class="btn btn-sm btn-outline-primary"><i class="fas fa-eye"></i></button>
-                                    <button class="btn btn-sm btn-outline-secondary"><i class="fas fa-edit"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Emily Davis</td>
-                                <td>Manicure & Pedicure</td>
-                                <td>May 15, 2023</td>
-                                <td>2:00 PM</td>
-                                <td><span class="badge bg-primary">Scheduled</span></td>
-                                <td>
-                                    <button class="btn btn-sm btn-outline-primary"><i class="fas fa-eye"></i></button>
-                                    <button class="btn btn-sm btn-outline-secondary"><i class="fas fa-edit"></i></button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+        <div class="copyright">
+            <p>&copy; 2025 Joy Beauty and Cosmetic. All rights reserved.</p>
         </div>
-    </main>
+    </footer>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-    <!-- Custom Script -->
     <script>
-        // Sample chart initialization
-        document.addEventListener('DOMContentLoaded', function() {
-            const ctx = document.createElement('canvas');
-            ctx.id = 'revenueChart';
-            document.querySelector('.card-body').appendChild(ctx);
-            
-            new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                    datasets: [{
-                        label: 'Monthly Revenue',
-                        data: [6500, 5900, 8000, 8100, 8600, 8250],
-                        backgroundColor: 'rgba(255, 107, 157, 0.2)',
-                        borderColor: 'rgba(255, 107, 157, 1)',
-                        borderWidth: 2,
-                        tension: 0.4,
-                        fill: true
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'top',
-                        }
-                    }
-                }
+        // Redirect booking buttons to login page
+        document.querySelectorAll('.book-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                if (!e.target.classList.contains('book-btn')) return;
+                window.location.href = 'pages/user/login.html';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (this.getAttribute('href') === '#') return;
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
     </script>
