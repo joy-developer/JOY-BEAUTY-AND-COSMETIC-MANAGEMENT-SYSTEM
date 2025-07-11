@@ -14,4 +14,9 @@ git pull origin main --force
 echo.
 echo Update completed!
 echo.
-pause
+echo Opening Joy Beauty System in Chrome...
+start chrome "http://localhost/projects/JOY-BEAUTY-AND-COSMETIC-MANAGEMENT-SYSTEM/"
+echo.
+
+exit
+@REM pause
