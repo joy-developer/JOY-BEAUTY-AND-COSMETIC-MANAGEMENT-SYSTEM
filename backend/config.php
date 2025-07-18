@@ -36,11 +36,44 @@ define('LOG_LEVEL', $_ENV['LOG_LEVEL'] ?? 'info');
 
 // Establish database connection
 try {
-    $pdo = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME, DB_USER, DB_PASS);
+    // First try to connect without specifying database
+    $pdo = new PDO("mysql:host=".DB_HOST, DB_USER, DB_PASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    
+    // Check if database exists
+    $stmt = $pdo->query("SHOW DATABASES LIKE '" . DB_NAME . "'");
+    if ($stmt->rowCount() == 0) {
+        // Create database
+        $pdo->exec("CREATE DATABASE " . DB_NAME);
+        logInfo("Database " . DB_NAME . " created successfully");
+        
+        // Connect to the newly created database
+        $pdo = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME, DB_USER, DB_PASS);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        
+        // Import SQL dump
+        $sqlDumpPath = __DIR__ . '/joy_beauty_database_dump.sql';
+        if (file_exists($sqlDumpPath)) {
+            $sql = file_get_contents($sqlDumpPath);
+            $pdo->exec($sql);
+            logInfo("Database dump imported successfully from " . $sqlDumpPath);
+        } else {
+            logError("SQL dump file not found at: " . $sqlDumpPath);
+            throw new Exception("SQL dump file not found");
+        }
+    } else {
+        // Connect to existing database
+        $pdo = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME, DB_USER, DB_PASS);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    }
 } catch(PDOException $e) {
+    logError("Database connection error: " . $e->getMessage());
     die("ERROR: Could not connect. " . $e->getMessage());
+} catch(Exception $e) {
+    logError("Error during database setup: " . $e->getMessage());
+    die("ERROR: " . $e->getMessage());
 }
 
 // Start session

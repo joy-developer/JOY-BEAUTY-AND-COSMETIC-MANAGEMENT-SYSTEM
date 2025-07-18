@@ -182,8 +182,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table joy_beauty.users: ~2 rows (approximately)
 INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `password`, `phone`, `address`, `user_type`, `created_at`, `updated_at`) VALUES
 	(1, 'Admin', 'Joy', 'admin@joybeauty.com', '$2y$10$lFyft0XbPc8V.X2JpDi0suhdrZywmeDJqqWL7PfJIEhGcQASo3M4S', '25494232323', NULL, 'admin', '2025-03-18 01:27:15', '2025-07-18 10:54:08'),
-	(2, 'Sarah', 'Johnson', 'sarah@example.com', '$2y$10$vO7BFDnyA1QWNiZ\\/Adt9n.jTNp3Kgx0Db4lO5OMhzzDodh1\\/pPdcS', '254712345678', NULL, 'client', '2025-07-17 15:27:15', '2025-07-17 17:47:07'),
-	(3, 'Test', 'User', 'pndunguedu@gmail.com', '$2y$10$vO7BFDnyA1QWNiZ/Adt9n.jTNp3Kgx0Db4lO5OMhzzDodh1/pPdcS', '254754601950', NULL, 'client', '2025-07-17 17:46:27', '2025-07-17 18:09:42');
+	(2, 'Sarah', 'Muthoni', 'sarah12@gmail.com', '$2y$10$1oJDs5HOBApYO0whRfLG5urJQsRVSC9es4YJUe1pV5s1HzRHXANHW', '254712345678', NULL, 'client', '2025-07-17 15:27:15', '2025-07-17 17:47:07'),
+	(3, 'Test', 'Client', 'client@gmail.com', '$2y$10$1oJDs5HOBApYO0whRfLG5urJQsRVSC9es4YJUe1pV5s1HzRHXANHW', '254754601950', NULL, 'client', '2025-07-17 17:46:27', '2025-07-17 18:09:42');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

@@ -1,58 +1,20 @@
-[2025-07-18 12:43:54] local.info: Login attempt started {"email":"glob@admin.all","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 12:43:54] local.warning: Login failed - Invalid credentials {"email":"glob@admin.all","password":"Admin.123","user_exists":"no","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 12:44:39] local.info: Login attempt started {"email":"glob@admin.all","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 12:44:39] local.warning: Login failed - Invalid credentials {"email":"glob@admin.all","password":"Admin.123","user_exists":"no","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 12:44:56] local.info: Login attempt started {"email":"pndunguedu@gmail.com","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 12:44:56] local.info: User login successful {"user_id":3,"email":"pndunguedu@gmail.com","user_type":"client","name":"Test User","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 12:44:56] local.info: Regular user redirected to user dashboard {"user_id":3,"email":"pndunguedu@gmail.com"}
-[2025-07-18 12:45:03] local.info: User logout {"user_id":3,"email":"pndunguedu@gmail.com","user_type":"client","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 12:45:03] local.info: Index page accessed {"ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","timestamp":"2025-07-18 12:45:03"}
-[2025-07-18 12:45:03] local.info: Services fetched successfully {"count":6}
-[2025-07-18 12:45:03] local.info: Products fetched successfully {"count":4}
-[2025-07-18 12:45:03] local.info: Testimonials fetched successfully {"count":3}
-[2025-07-18 12:45:30] local.info: Login attempt started {"email":"admin@joybeauty.com","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 12:45:30] local.warning: Login failed - Invalid credentials {"email":"admin@joybeauty.com","password":"password123","user_exists":"yes","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 12:54:34] local.info: Login attempt started {"email":"admin@joybeauty.com","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 12:54:34] local.info: User login successful {"user_id":1,"email":"admin@joybeauty.com","password":"admin123","user_type":"admin","name":"Admin Joy","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 12:54:34] local.info: Admin user redirected to admin dashboard {"user_id":1,"email":"admin@joybeauty.com"}
-[2025-07-18 12:56:37] local.info: User logout {"user_id":1,"email":"admin@joybeauty.com","user_type":"admin","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 12:56:37] local.info: Index page accessed {"ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","timestamp":"2025-07-18 12:56:37"}
-[2025-07-18 12:56:37] local.info: Services fetched successfully {"count":6}
-[2025-07-18 12:56:37] local.info: Products fetched successfully {"count":4}
-[2025-07-18 12:56:37] local.info: Testimonials fetched successfully {"count":3}
-[2025-07-18 12:56:43] local.info: Index page accessed {"ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","timestamp":"2025-07-18 12:56:43"}
-[2025-07-18 12:56:43] local.info: Services fetched successfully {"count":6}
-[2025-07-18 12:56:43] local.info: Products fetched successfully {"count":4}
-[2025-07-18 12:56:43] local.info: Testimonials fetched successfully {"count":3}
-[2025-07-18 13:03:16] local.info: Login attempt started {"email":"admin@joybeauty.com","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 13:03:16] local.info: User login successful {"user_id":1,"email":"admin@joybeauty.com","password":"admin123","user_type":"admin","name":"Admin Joy","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 13:03:16] local.info: Admin user redirected to admin dashboard {"user_id":1,"email":"admin@joybeauty.com"}
-[2025-07-18 14:05:38] local.info: User logout {"user_id":1,"email":"admin@joybeauty.com","user_type":"admin","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 14:05:38] local.info: Index page accessed {"ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","timestamp":"2025-07-18 14:05:38"}
-[2025-07-18 14:05:38] local.info: Services fetched successfully {"count":6}
-[2025-07-18 14:05:38] local.info: Products fetched successfully {"count":4}
-[2025-07-18 14:05:38] local.info: Testimonials fetched successfully {"count":3}
-[2025-07-18 14:05:54] local.info: Login attempt started {"email":"pndunguedu@gmail.com","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 14:05:54] local.info: User login successful {"user_id":3,"email":"pndunguedu@gmail.com","password":"password123","user_type":"client","name":"Test User","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 14:05:54] local.info: Regular user redirected to user dashboard {"user_id":3,"email":"pndunguedu@gmail.com"}
-[2025-07-18 14:09:40] local.info: User logout {"user_id":3,"email":"pndunguedu@gmail.com","user_type":"client","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 14:09:40] local.info: Index page accessed {"ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","timestamp":"2025-07-18 14:09:40"}
-[2025-07-18 14:09:40] local.info: Services fetched successfully {"count":6}
-[2025-07-18 14:09:40] local.info: Products fetched successfully {"count":4}
-[2025-07-18 14:09:40] local.info: Testimonials fetched successfully {"count":3}
-[2025-07-18 14:09:55] local.info: Login attempt started {"email":"admin@joybeauty.com","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 14:09:55] local.info: User login successful {"user_id":1,"email":"admin@joybeauty.com","password":"admin123","user_type":"admin","name":"Admin Joy","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 14:09:55] local.info: Admin user redirected to admin dashboard {"user_id":1,"email":"admin@joybeauty.com"}
-[2025-07-18 14:10:44] local.info: User logout {"user_id":1,"email":"admin@joybeauty.com","user_type":"admin","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 14:10:44] local.info: Index page accessed {"ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","timestamp":"2025-07-18 14:10:44"}
-[2025-07-18 14:10:44] local.info: Services fetched successfully {"count":6}
-[2025-07-18 14:10:44] local.info: Products fetched successfully {"count":4}
-[2025-07-18 14:10:44] local.info: Testimonials fetched successfully {"count":3}
-[2025-07-18 14:10:58] local.info: Login attempt started {"email":"pndunguedu@gmail.com","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 14:10:58] local.info: User login successful {"user_id":3,"email":"pndunguedu@gmail.com","password":"password123","user_type":"client","name":"Test User","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 14:10:58] local.info: Regular user redirected to user dashboard {"user_id":3,"email":"pndunguedu@gmail.com"}
-[2025-07-18 14:27:18] local.info: User logout {"user_id":3,"email":"pndunguedu@gmail.com","user_type":"client","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 14:27:18] local.info: Index page accessed {"ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","timestamp":"2025-07-18 14:27:18"}
-[2025-07-18 14:27:18] local.info: Services fetched successfully {"count":6}
-[2025-07-18 14:27:18] local.info: Products fetched successfully {"count":4}
-[2025-07-18 14:27:18] local.info: Testimonials fetched successfully {"count":3}
+[2025-07-18 14:42:09] local.info: Index page accessed {"ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","timestamp":"2025-07-18 14:42:09"}
+[2025-07-18 14:42:09] local.info: Services fetched successfully {"count":6}
+[2025-07-18 14:42:09] local.info: Products fetched successfully {"count":4}
+[2025-07-18 14:42:09] local.info: Testimonials fetched successfully {"count":3}
+[2025-07-18 14:42:30] local.info: Login attempt started {"email":"client@gmail.com","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-18 14:42:30] local.warning: Login failed - Invalid credentials {"email":"client@gmail.com","password":"client123","user_exists":"no","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-18 14:42:56] local.info: Database joy_beauty created successfully
+[2025-07-18 14:42:57] local.info: Database dump imported successfully from D:\Documents\htdocs\Projects\Joy\JOY-BEAUTY-AND-COSMETIC-MANAGEMENT-SYSTEM\backend/joy_beauty_database_dump.sql
+[2025-07-18 14:42:57] local.info: Index page accessed {"ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","timestamp":"2025-07-18 14:42:57"}
+[2025-07-18 14:42:57] local.info: Services fetched successfully {"count":6}
+[2025-07-18 14:42:57] local.info: Products fetched successfully {"count":4}
+[2025-07-18 14:42:57] local.info: Testimonials fetched successfully {"count":3}
+[2025-07-18 14:43:14] local.info: Login attempt started {"email":"client@gmail.com","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-18 14:43:14] local.info: User login successful {"user_id":3,"email":"client@gmail.com","password":"client123","user_type":"client","name":"Test Client","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-18 14:43:14] local.info: Regular user redirected to user dashboard {"user_id":3,"email":"client@gmail.com"}
+[2025-07-18 14:43:17] local.info: User logout {"user_id":3,"email":"client@gmail.com","user_type":"client","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-18 14:43:17] local.info: Index page accessed {"ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","timestamp":"2025-07-18 14:43:17"}
+[2025-07-18 14:43:17] local.info: Services fetched successfully {"count":6}
+[2025-07-18 14:43:17] local.info: Products fetched successfully {"count":4}
+[2025-07-18 14:43:17] local.info: Testimonials fetched successfully {"count":3}
