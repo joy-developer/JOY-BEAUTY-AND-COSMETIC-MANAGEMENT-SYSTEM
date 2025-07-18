@@ -1,3 +1,69 @@
+<?php
+require_once 'backend/config.php';
+
+// Log page access
+logInfo('Index page accessed', [
+    'ip_address' => getUserIP(),
+    'user_agent' => getUserAgent(),
+    'timestamp' => date('Y-m-d H:i:s')
+]);
+
+// Fetch Services
+$services = [];
+try {
+    $sql_services = "SELECT name, description, image_url FROM services WHERE is_active = 1 LIMIT 6";
+    $stmt_services = $pdo->prepare($sql_services);
+    $stmt_services->execute();
+    $services = $stmt_services->fetchAll();
+    
+    logInfo('Services fetched successfully', [
+        'count' => count($services)
+    ]);
+} catch(PDOException $e) {
+    logError('Failed to fetch services', [
+        'error' => $e->getMessage(),
+        'query' => $sql_services
+    ]);
+    $services = []; // Fallback to empty array
+}
+
+// Fetch Products
+$products = [];
+try {
+    $sql_products = "SELECT name, image_url, price FROM products WHERE is_active = 1 LIMIT 4";
+    $stmt_products = $pdo->prepare($sql_products);
+    $stmt_products->execute();
+    $products = $stmt_products->fetchAll();
+    
+    logInfo('Products fetched successfully', [
+        'count' => count($products)
+    ]);
+} catch(PDOException $e) {
+    logError('Failed to fetch products', [
+        'error' => $e->getMessage(),
+        'query' => $sql_products
+    ]);
+    $products = []; // Fallback to empty array
+}
+// Fetch Testimonials
+$testimonials = [];
+try {
+    $sql_testimonials = "SELECT quote, client_name, client_title, client_image_url FROM testimonials ORDER BY created_at DESC LIMIT 8";
+    $stmt_testimonials = $pdo->prepare($sql_testimonials);
+    $stmt_testimonials->execute();
+    $testimonials = $stmt_testimonials->fetchAll();
+    
+    logInfo('Testimonials fetched successfully', [
+        'count' => count($testimonials)
+    ]);
+} catch(PDOException $e) {
+    logError('Failed to fetch testimonials', [
+        'error' => $e->getMessage(),
+        'query' => $sql_testimonials
+    ]);
+    $testimonials = []; // Fallback to empty array
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -440,6 +506,22 @@
             font-size: 0.9rem;
         }
         
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            text-align: center;
+        }
+        
+        .no-data {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-style: italic;
+        }
+        
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -487,7 +569,7 @@
                 <li><a href="#products">Products</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#about">About Us</a></li>
-                <li><a href="pages/user/login.html" class="login-btn">Login</a></li>
+                <li><a href="pages/user/login.php" class="login-btn">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -495,149 +577,111 @@
     <section class="hero">
         <h1>Your Beauty, Our Passion</h1>
         <p>Discover our premium beauty services and cosmetic products designed to enhance your natural beauty</p>
-        <a href="pages/user/login.html"><button class="book-btn">Book an Appointment</button></a>
+        <a href="pages/user/login.php"><button class="book-btn">Book an Appointment</button></a>
     </section>
 
     <section class="services" id="services">
         <h2 class="section-title">Our Services</h2>
         <div class="service-grid">
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                     alt="Skincare Treatments" class="service-img">
-                <div class="service-content">
-                    <h3>Skincare Treatments</h3>
-                    <p>Professional facials, chemical peels, microdermabrasion, and anti-aging treatments tailored to your skin's needs.</p>
-                    <button class="book-btn">Book Now</button>
+            <?php if (!empty($services)): ?>
+                <?php foreach ($services as $service): ?>
+                    <div class="service-card">
+                        <img src="<?php echo htmlspecialchars($service['image_url']); ?>" 
+                             alt="<?php echo htmlspecialchars($service['name']); ?>" class="service-img">
+                        <div class="service-content">
+                            <h3><?php echo htmlspecialchars($service['name']); ?></h3>
+                            <p><?php echo htmlspecialchars($service['description']); ?></p>
+                            <button class="book-btn">Book Now</button>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <div class="no-data">
+                    <p>No services available at the moment. Please check back later.</p>
                 </div>
-            </div>
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80" 
-                     alt="Hair Services" class="service-img">
-                <div class="service-content">
-                    <h3>Hair Services</h3>
-                    <p>Cut, color, styling, keratin treatments, and extensions for all hair types with premium products.</p>
-                    <button class="book-btn">Book Now</button>
-                </div>
-            </div>
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                     alt="Makeup Artistry" class="service-img">
-                <div class="service-content">
-                    <h3>Makeup Artistry</h3>
-                    <p>Professional makeup for weddings, special occasions, or just because - enhancing your natural features.</p>
-                    <button class="book-btn">Book Now</button>
-                </div>
-            </div>
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                     alt="Spa Treatments" class="service-img">
-                <div class="service-content">
-                    <h3>Spa Treatments</h3>
-                    <p>Relaxing massages, body wraps, and detox treatments in our serene spa environment.</p>
-                    <button class="book-btn">Book Now</button>
-                </div>
-            </div>
+            <?php endif; ?>
         </div>
     </section>
 
     <section class="products" id="products">
         <h2 class="section-title">Featured Products</h2>
         <div class="product-grid">
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1588&q=80" 
-                     alt="Vitamin C Serum" class="product-img">
-                <div class="product-info">
-                    <h3>Vitamin C Brightening Serum</h3>
-                    <p class="price">Ksh405.00</p>
-                    <button class="book-btn">Add to Cart</button>
+            <?php if (!empty($products)): ?>
+                <?php foreach ($products as $product): ?>
+                    <div class="product-card">
+                        <img src="<?php echo htmlspecialchars($product['image_url']); ?>" 
+                             alt="<?php echo htmlspecialchars($product['name']); ?>" class="product-img">
+                        <div class="product-info">
+                            <h3><?php echo htmlspecialchars($product['name']); ?></h3>
+                            <p class="price">Ksh<?php echo number_format($product['price'], 2); ?></p>
+                            <button class="book-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <div class="no-data">
+                    <p>No products available at the moment. Please check back later.</p>
                 </div>
-            </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                     alt="Hair Care Kit" class="product-img">
-                <div class="product-info">
-                    <h3>Luxury Hair Care Kit</h3>
-                    <p class="price">Ksh420.00</p>
-                    <button class="book-btn">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                     alt="Makeup Palette" class="product-img">
-                <div class="product-info">
-                    <h3>Pro Makeup Palette</h3>
-                    <p class="price">Ksh550.00</p>
-                    <button class="book-btn">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://www.eve.co.ke/cdn/shop/files/s2734028-av-4-zoom_1024x1024@2x.webp?v=1714395915" 
-                     alt="Body Lotion" class="product-img">
-                <div class="product-info">
-                    <h3>Hydrating Body Lotion</h3>
-                    <p class="price">Ksh270.00</p>
-                    <button class="book-btn">Add to Cart</button>
-                </div>
-            </div>
+            <?php endif; ?>
         </div>
     </section>
 
     <section class="testimonials" id="testimonials">
-        <h2 class="section-title">Client Testimonials</h2>
+        <h2 class="section-title">What Our Clients Say</h2>
         <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <p class="quote">"The facial treatment I received was amazing! My skin has never felt so refreshed and glowing. The staff is incredibly professional and knowledgeable."</p>
-                <div class="client">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                         alt="Sarah M." class="client-img">
-                    <div class="client-info">
-                        <h4>Sarah M.</h4>
-                        <p>Regular Client</p>
+            <?php if (!empty($testimonials)): ?>
+                <?php foreach ($testimonials as $testimonial): ?>
+                    <div class="testimonial-card">
+                        <p class="quote">"<?php echo htmlspecialchars($testimonial['quote']); ?>"</p>
+                        <div class="client">
+                            <?php if (!empty($testimonial['client_image_url'])): ?>
+                                <img src="<?php echo htmlspecialchars($testimonial['client_image_url']); ?>" 
+                                     alt="<?php echo htmlspecialchars($testimonial['client_name']); ?>" class="client-img">
+                            <?php else: ?>
+                                <div class="default-avatar">
+                                    <?php echo strtoupper(substr($testimonial['client_name'], 0, 1)); ?>
+                                </div>
+                            <?php endif; ?>
+                            <div class="client-info">
+                                <h4><?php echo htmlspecialchars($testimonial['client_name']); ?></h4>
+                                <?php if (!empty($testimonial['client_title'])): ?>
+                                    <p><?php echo htmlspecialchars($testimonial['client_title']); ?></p>
+                                <?php endif; ?>
+                            </div>
+                        </div>
                     </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <div class="no-data">
+                    <p>No testimonials available at the moment. Please check back later.</p>
                 </div>
-            </div>
-            <div class="testimonial-card">
-                <p class="quote">"I've been coming to Joy Beauty for my hair for 2 years now and I wouldn't go anywhere else. They always know exactly what will suit me best."</p>
-                <div class="client">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
-                         alt="James K." class="client-img">
-                    <div class="client-info">
-                        <h4>James K.</h4>
-                        <p>Hair Client</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <p class="quote">"The bridal makeup was perfect! I felt beautiful and the makeup lasted all day through tears and dancing. Highly recommend!"</p>
-                <div class="client">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80" 
-                         alt="Emily T." class="client-img">
-                    <div class="client-info">
-                        <h4>Emily T.</h4>
-                        <p>Bride</p>
-                    </div>
-                </div>
-            </div>
+            <?php endif; ?>
         </div>
     </section>
 
     <section class="about" id="about">
-        <h2 class="section-title" style="color: white;">About Joy Beauty</h2>
+        <h2 class="section-title" style="color: white;">About Us</h2>
         <div class="about-content">
-            <p>Founded in 2024, Joy Beauty and Cosmetic has been dedicated to providing exceptional beauty services and premium cosmetic products to our valued clients in Meru and beyond.</p>
-            <p>Our team of certified professionals stays current with the latest techniques and trends to ensure you receive the highest quality services in a welcoming and relaxing environment.</p>
-            <button class="book-btn" style="background-color: var(--gold); color: #333;">Learn More</button>
+            <p>At Joy Beauty & Cosmetic, we believe in enhancing your natural beauty and providing a luxurious experience. Our team of expert stylists and estheticians are dedicated to offering personalized services and high-quality products that leave you feeling radiant and confident. We are committed to using the finest ingredients and latest techniques to ensure your satisfaction.</p>
+            <a href="pages/user/login.php"><button class="book-btn">Learn More</button></a>
         </div>
     </section>
 
     <section class="cta">
         <h2>Ready to Experience Joy Beauty?</h2>
-        <p>Book your appointment today and discover why our clients keep coming back</p>
-        <a href="pages/user/login.html"><button class="book-btn">Book Now</button></a>
+        <p>Book your appointment today and let us pamper you with our exceptional services and products.</p>
+        <a href="pages/user/login.php"><button class="book-btn">Book Your Transformation</button></a>
     </section>
 
     <footer>
         <div class="footer-content">
+            <div class="footer-column">
+                <h3>Joy Beauty & Cosmetic</h3>
+                <p>Your ultimate destination for beauty and wellness.</p>
+                <p>Nairobi, Kenya</p>
+                <p>Email: info@joybeauty.com</p>
+                <p>Phone: +254 7XX XXX XXX</p>
+            </div>
             <div class="footer-column">
                 <h3>Quick Links</h3>
                 <ul>
@@ -645,60 +689,22 @@
                     <li><a href="#products">Products</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#about">About Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Services</h3>
-                <ul>
-                    <li><a href="#">Skincare</a></li>
-                    <li><a href="#">Hair Services</a></li>
-                    <li><a href="#">Makeup</a></li>
-                    <li><a href="#">Spa Treatments</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Contact Us</h3>
-                <ul>
-                    <li><i class="fas fa-map-marker-alt"></i> 123 Beauty St, Meru Town</li>
-                    <li><i class="fas fa-phone"></i> +254 702 345 078</li>
-                    <li><i class="fas fa-envelope"></i> info@joybeauty.com</li>
+                    <li><a href="pages/user/login.php">Login</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>Follow Us</h3>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
                 </div>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2025 Joy Beauty and Cosmetic. All rights reserved.</p>
+            &copy; <?php echo date("Y"); ?> Joy Beauty & Cosmetic. All Rights Reserved.
         </div>
     </footer>
-
-    <script>
-        // Redirect booking buttons to login page
-        document.querySelectorAll('.book-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                if (!e.target.classList.contains('book-btn')) return;
-                window.location.href = 'pages/user/login.html';
-            });
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                if (this.getAttribute('href') === '#') return;
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>
