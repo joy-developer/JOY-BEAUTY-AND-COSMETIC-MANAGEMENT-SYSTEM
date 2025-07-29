@@ -1,0 +1,56 @@
+# Node.js dependencies
+node_modules/
+
+# Build output directories
+dist/
+build/
+public/build/ # For frameworks like Laravel Mix or Webpack
+
+# Environment variables
+.env
+.env.local
+.env.*.local # Matches .env.development.local, .env.production.local, etc.
+
+# Log files
+*.log
+logs/
+
+*.env
+
+# Temporary files and directories
+tmp/
+temp/
+*.tmp
+*.swp # Vim swap files
+*.bak # Backup files
+
+# IDE and editor specific files
+.vscode/ # VS Code specific settings
+.idea/ # IntelliJ IDEA specific settings
+*.iml # IntelliJ IDEA module files
+.DS_Store # macOS specific files
+Thumbs.db # Windows specific files
+
+# Operating system generated files
+ehthumbs.db
+Desktop.ini
+
+# Uploads or user-generated content (if not handled by a separate storage solution)
+uploads/
+media/
+
+# Database files (if local development databases are not meant to be tracked)
+*.sqlite
+*.db
+
+# Composer dependencies (for PHP projects)
+vendor/
+
+# WordPress specific files (if applicable)
+wp-content/uploads/
+wp-content/cache/
+wp-config-local.php # Local WordPress configuration
+
+# Other specific files you might want to ignore
+# For example, if you have a specific database backup file:
+database_backup.sql
