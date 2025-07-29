@@ -1,0 +1,24 @@
+[2025-07-28 16:35:04] local.error: Database connection error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+[2025-07-28 16:35:19] local.error: Database connection error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+[2025-07-28 16:35:21] local.error: Database connection error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+[2025-07-28 16:35:22] local.error: Database connection error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+[2025-07-28 16:36:12] local.error: Database connection error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+[2025-07-28 16:37:23] local.error: Database connection error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+[2025-07-28 16:37:32] local.error: Database connection error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+[2025-07-28 16:37:34] local.error: Database connection error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+[2025-07-28 16:37:34] local.error: Database connection error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+[2025-07-28 16:37:36] local.error: Database connection error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+[2025-07-28 16:37:37] local.error: Database connection error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+[2025-07-28 16:37:38] local.error: Database connection error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+[2025-07-28 16:37:38] local.error: Database connection error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+[2025-07-28 16:37:38] local.error: Database connection error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+[2025-07-28 16:40:33] local.error: Database connection error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+[2025-07-28 16:53:29] local.error: Database connection error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+[2025-07-28 17:04:19] local.info: Database joy_beauty created successfully
+[2025-07-28 17:04:19] local.error: Database connection error: SQLSTATE[HY000]: General error: 1273 Unknown collation: 'utf8mb4_0900_ai_ci'
+[2025-07-28 17:05:08] local.info: Database joy_beauty created successfully
+[2025-07-28 17:05:08] local.error: Database connection error: SQLSTATE[HY000]: General error: 1273 Unknown collation: 'utf8mb4_0900_ai_ci'
+[2025-07-28 17:06:26] local.info: Database joy_beauty created successfully
+[2025-07-28 17:06:26] local.error: Database connection error: SQLSTATE[HY000]: General error: 1273 Unknown collation: 'utf8mb4_0900_ai_ci'
+[2025-07-28 17:44:25] local.info: Database joy_beauty created successfully
+[2025-07-28 17:44:25] local.error: Database connection error: SQLSTATE[HY000]: General error: 1273 Unknown collation: 'utf8mb4_0900_ai_ci'
