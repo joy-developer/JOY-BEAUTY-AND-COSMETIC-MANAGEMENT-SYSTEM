@@ -17,7 +17,7 @@
 
 -- Dumping database structure for joy_beauty
 DROP DATABASE IF EXISTS `joy_beauty`;
-CREATE DATABASE IF NOT EXISTS `joy_beauty` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE IF NOT EXISTS `joy_beauty` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `joy_beauty`;
 
 -- Dumping structure for table joy_beauty.appointments
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `appointments` (
   KEY `service_id` (`service_id`),
   CONSTRAINT `appointments_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
   CONSTRAINT `appointments_ibfk_2` FOREIGN KEY (`service_id`) REFERENCES `services` (`service_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- Dumping data for table joy_beauty.appointments: ~0 rows (approximately)
 INSERT INTO `appointments` (`appointment_id`, `user_id`, `service_id`, `appointment_date`, `start_time`, `end_time`, `status`, `notes`, `created_at`) VALUES
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `is_active` tinyint(1) DEFAULT '1',
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- Dumping data for table joy_beauty.products: ~12 rows (approximately)
 INSERT INTO `products` (`product_id`, `name`, `description`, `category`, `price`, `stock_quantity`, `image_url`, `is_active`, `created_at`) VALUES
@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `sales` (
   PRIMARY KEY (`sale_id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `sales_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- Dumping data for table joy_beauty.sales: ~0 rows (approximately)
 INSERT INTO `sales` (`sale_id`, `user_id`, `sale_date`, `total_amount`, `payment_method`, `payment_status`) VALUES
@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `sale_items` (
   CONSTRAINT `sale_items_ibfk_1` FOREIGN KEY (`sale_id`) REFERENCES `sales` (`sale_id`),
   CONSTRAINT `sale_items_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`),
   CONSTRAINT `sale_items_ibfk_3` FOREIGN KEY (`service_id`) REFERENCES `services` (`service_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- Dumping data for table joy_beauty.sale_items: ~2 rows (approximately)
 INSERT INTO `sale_items` (`sale_item_id`, `sale_id`, `product_id`, `service_id`, `quantity`, `unit_price`) VALUES
@@ -129,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `services` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `image_url` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`service_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- Dumping data for table joy_beauty.services: ~10 rows (approximately)
 INSERT INTO `services` (`service_id`, `name`, `description`, `price`, `duration_minutes`, `is_active`, `created_at`, `image_url`) VALUES
@@ -154,7 +154,7 @@ CREATE TABLE IF NOT EXISTS `testimonials` (
   `client_image_url` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`testimonial_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- Dumping data for table joy_beauty.testimonials: ~3 rows (approximately)
 INSERT INTO `testimonials` (`testimonial_id`, `quote`, `client_name`, `client_title`, `client_image_url`, `created_at`) VALUES
@@ -177,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- Dumping data for table joy_beauty.users: ~2 rows (approximately)
 INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `password`, `phone`, `address`, `user_type`, `created_at`, `updated_at`) VALUES

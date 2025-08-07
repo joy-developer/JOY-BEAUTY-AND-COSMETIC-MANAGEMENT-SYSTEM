@@ -1,0 +1,1 @@
+[2025-07-27 06:30:40] local.error: Database connection error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
