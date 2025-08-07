@@ -1,0 +1,4 @@
+[2025-07-28 15:37:02] local.info: Index page accessed {"ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","timestamp":"2025-07-28 15:37:02"}
+[2025-07-28 15:37:02] local.info: Services fetched successfully {"count":6}
+[2025-07-28 15:37:02] local.info: Products fetched successfully {"count":4}
+[2025-07-28 15:37:02] local.info: Testimonials fetched successfully {"count":3}
