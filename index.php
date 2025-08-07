@@ -678,9 +678,9 @@ try {
             <div class="footer-column">
                 <h3>Joy Beauty & Cosmetic</h3>
                 <p>Your ultimate destination for beauty and wellness.</p>
-                <p>Nairobi, Kenya</p>
+                <p>Meru, Kenya</p>
                 <p>Email: info@joybeauty.com</p>
-                <p>Phone: +254 7XX XXX XXX</p>
+                <p>Phone: +254 794 123 456</p>
             </div>
             <div class="footer-column">
                 <h3>Quick Links</h3>
@@ -695,10 +695,10 @@ try {
             <div class="footer-column">
                 <h3>Follow Us</h3>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="https://www.facebook.com/search/top/?q=beauty%20shops"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/explore/tags/beautyshops/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/search?q=beauty%20shops%20kenya&src=typed_query&f=top"><i class="fab fa-x"></i></a>
+                    <a href="https://www.pinterest.com/search/pins/?q=beauty%20shops"><i class="fab fa-pinterest"></i></a>
                 </div>
             </div>
         </div>

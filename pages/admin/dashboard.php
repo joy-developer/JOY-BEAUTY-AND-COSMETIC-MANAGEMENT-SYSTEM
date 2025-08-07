@@ -525,7 +525,7 @@ try {
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <h6 class="text-muted mb-2">Monthly Revenue</h6>
-                                <h3 class="mb-0">$<?php echo number_format($monthlyRevenue, 2); ?></h3>
+                                <h3 class="mb-0">Ksh<?php echo number_format($monthlyRevenue, 2); ?></h3>
                             </div>
                             <div class="bg-info bg-opacity-10 p-3 rounded">
                                 <i class="fas fa-dollar-sign text-info"></i>
@@ -817,7 +817,7 @@ try {
                                 <td><?php echo $product['product_id']; ?></td>
                                 <td><?php echo $product['name']; ?></td>
                                 <td><?php echo $product['category']; ?></td>
-                                <td>$<?php echo number_format($product['price'], 2); ?></td>
+                                <td>Ksh<?php echo number_format($product['price'], 2); ?></td>
                                 <td><?php echo $product['stock_quantity']; ?></td>
                                 <td>
                                     <span class="badge <?php echo $product['is_active'] ? 'bg-success' : 'bg-secondary'; ?>">
@@ -1041,7 +1041,7 @@ try {
                                     <tr>
                                         <td><?php echo $service['name']; ?></td>
                                         <td><?php echo $service['total_appointments']; ?></td>
-                                        <td>$<?php echo number_format($service['total_revenue'], 2); ?></td>
+                                        <td>Ksh<?php echo number_format($service['total_revenue'], 2); ?></td>
                                     </tr>
                                     <?php endforeach; ?>
                                 </tbody>
@@ -1073,7 +1073,7 @@ try {
                                     <tr>
                                         <td><?php echo $product['name']; ?></td>
                                         <td><?php echo $product['total_sold']; ?></td>
-                                        <td>$<?php echo number_format($product['total_revenue'], 2); ?></td>
+                                        <td>Ksh<?php echo number_format($product['total_revenue'], 2); ?></td>
                                     </tr>
                                     <?php endforeach; ?>
                                 </tbody>
@@ -1103,7 +1103,7 @@ try {
                                     <tr>
                                         <td><?php echo date('F Y', strtotime($report['month'] . '-01')); ?></td>
                                         <td><?php echo $report['total_sales']; ?></td>
-                                        <td>$<?php echo number_format($report['total_revenue'], 2); ?></td>
+                                        <td>Ksh<?php echo number_format($report['total_revenue'], 2); ?></td>
                                     </tr>
                                     <?php endforeach; ?>
                                 </tbody>

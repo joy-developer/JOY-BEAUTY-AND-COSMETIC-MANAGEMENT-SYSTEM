@@ -678,7 +678,7 @@ try {
                     <?php foreach ($recommendedProducts as $product): ?>
                     <div class="mb-3 p-2 product-card">
                         <strong><?php echo $product['name']; ?></strong><br>
-                        <span class="text-primary">$<?php echo number_format($product['price'], 2); ?></span>
+                        <span class="text-primary">Ksh<?php echo number_format($product['price'], 2); ?></span>
                         <a href="?tab=products" class="btn btn-sm btn-pink mt-2">View Details</a>
                     </div>
                     <?php endforeach; ?>
@@ -751,7 +751,7 @@ try {
                             <div class="list-group-item mb-2">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1"><?php echo $service['name']; ?></h5>
-                                    <small>$<?php echo number_format($service['price'], 2); ?></small>
+                                    <small>Ksh<?php echo number_format($service['price'], 2); ?></small>
                                 </div>
                                 <p class="mb-1"><?php echo $service['description']; ?></p>
                                 <small>Duration: <?php echo floor($service['duration_minutes']/60); ?>h <?php echo $service['duration_minutes']%60; ?>m</small>
@@ -970,7 +970,7 @@ try {
                                     <div class="card-body">
                                         <h5 class="card-title"><?php echo $product['name']; ?></h5>
                                         <p class="card-text text-muted"><?php echo substr($product['description'], 0, 100); ?>...</p>
-                                        <h6 class="text-primary">$<?php echo number_format($product['price'], 2); ?></h6>
+                                        <h6 class="text-primary">Ksh<?php echo number_format($product['price'], 2); ?></h6>
                                     </div>
                                     <div class="card-footer bg-white">
                                         <form method="POST">
@@ -1011,7 +1011,7 @@ try {
                                     <div class="card-body">
                                         <h5 class="card-title"><?php echo $product['name']; ?></h5>
                                         <p class="card-text text-muted"><?php echo substr($product['description'], 0, 100); ?>...</p>
-                                        <h6 class="text-primary">$<?php echo number_format($product['price'], 2); ?></h6>
+                                        <h6 class="text-primary">Ksh<?php echo number_format($product['price'], 2); ?></h6>
                                         <small class="text-muted">In Stock: <?php echo $product['stock_quantity']; ?></small>
                                     </div>
                                     <div class="card-footer bg-white">
@@ -1067,9 +1067,9 @@ try {
                                     ?>
                                     <tr>
                                         <td><?php echo $product['name']; ?></td>
-                                        <td>$<?php echo number_format($product['price'], 2); ?></td>
+                                        <td>Ksh<?php echo number_format($product['price'], 2); ?></td>
                                         <td><?php echo $quantity; ?></td>
-                                        <td>$<?php echo number_format($productTotal, 2); ?></td>
+                                        <td>Ksh<?php echo number_format($productTotal, 2); ?></td>
                                         <td>
                                             <a href="?tab=products&remove_from_cart=<?php echo $productId; ?>" class="btn btn-sm btn-outline-danger">
                                                 <i class="fas fa-trash"></i>
@@ -1079,7 +1079,7 @@ try {
                                     <?php endforeach; ?>
                                     <tr>
                                         <td colspan="3" class="text-end"><strong>Total:</strong></td>
-                                        <td colspan="2"><strong>$<?php echo number_format($cartTotal, 2); ?></strong></td>
+                                        <td colspan="2"><strong>Ksh<?php echo number_format($cartTotal, 2); ?></strong></td>
                                     </tr>
                                 </tbody>
                             </table>
