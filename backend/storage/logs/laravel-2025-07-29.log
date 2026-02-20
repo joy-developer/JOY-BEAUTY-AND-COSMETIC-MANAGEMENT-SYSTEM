@@ -5,3 +5,47 @@
 [2025-07-29 02:06:37] local.info: Login attempt started {"email":"client@gmail.com","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
 [2025-07-29 02:06:37] local.info: User login successful {"user_id":3,"email":"client@gmail.com","password":"client123","user_type":"client","name":"Test Client","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
 [2025-07-29 02:06:37] local.info: Regular user redirected to user dashboard {"user_id":3,"email":"client@gmail.com"}
+[2025-07-29 02:16:10] local.info: User logout {"user_id":3,"email":"client@gmail.com","user_type":"client","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-29 02:16:11] local.info: Index page accessed {"ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","timestamp":"2025-07-29 02:16:11"}
+[2025-07-29 02:16:11] local.info: Services fetched successfully {"count":6}
+[2025-07-29 02:16:11] local.info: Products fetched successfully {"count":4}
+[2025-07-29 02:16:11] local.info: Testimonials fetched successfully {"count":3}
+[2025-07-29 02:16:53] local.info: Login attempt started {"email":"admin@joybeauty.com","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-29 02:16:53] local.info: User login successful {"user_id":1,"email":"admin@joybeauty.com","password":"admin123","user_type":"admin","name":"Admin Joy","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-29 02:16:53] local.info: Admin user redirected to admin dashboard {"user_id":1,"email":"admin@joybeauty.com"}
+[2025-07-29 02:18:24] local.info: User logout {"user_id":1,"email":"admin@joybeauty.com","user_type":"admin","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-29 02:18:24] local.info: Index page accessed {"ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","timestamp":"2025-07-29 02:18:24"}
+[2025-07-29 02:18:24] local.info: Services fetched successfully {"count":6}
+[2025-07-29 02:18:24] local.info: Products fetched successfully {"count":4}
+[2025-07-29 02:18:24] local.info: Testimonials fetched successfully {"count":3}
+[2025-07-29 02:18:40] local.info: Login attempt started {"email":"client@gmail.com","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-29 02:18:41] local.info: User login successful {"user_id":3,"email":"client@gmail.com","password":"client123","user_type":"client","name":"Test Client","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-29 02:18:41] local.info: Regular user redirected to user dashboard {"user_id":3,"email":"client@gmail.com"}
+[2025-07-29 02:18:54] local.info: User logout {"user_id":3,"email":"client@gmail.com","user_type":"client","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-29 02:18:54] local.info: Index page accessed {"ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","timestamp":"2025-07-29 02:18:54"}
+[2025-07-29 02:18:54] local.info: Services fetched successfully {"count":6}
+[2025-07-29 02:18:54] local.info: Products fetched successfully {"count":4}
+[2025-07-29 02:18:54] local.info: Testimonials fetched successfully {"count":3}
+[2025-07-29 02:31:59] local.info: Index page accessed {"ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","timestamp":"2025-07-29 02:31:59"}
+[2025-07-29 02:31:59] local.info: Services fetched successfully {"count":6}
+[2025-07-29 02:31:59] local.info: Products fetched successfully {"count":4}
+[2025-07-29 02:31:59] local.info: Testimonials fetched successfully {"count":3}
+[2025-07-29 02:32:35] local.info: Login attempt started {"email":"client@gmail.com","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-29 02:32:35] local.info: User login successful {"user_id":3,"email":"client@gmail.com","password":"client123","user_type":"client","name":"Test Client","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-29 02:32:35] local.info: Regular user redirected to user dashboard {"user_id":3,"email":"client@gmail.com"}
+[2025-07-29 02:33:58] local.info: User logout {"user_id":3,"email":"client@gmail.com","user_type":"client","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-29 02:33:58] local.info: Index page accessed {"ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","timestamp":"2025-07-29 02:33:58"}
+[2025-07-29 02:33:58] local.info: Services fetched successfully {"count":6}
+[2025-07-29 02:33:58] local.info: Products fetched successfully {"count":4}
+[2025-07-29 02:33:58] local.info: Testimonials fetched successfully {"count":3}
+[2025-07-29 02:34:24] local.info: Login attempt started {"email":"client@gmail.com","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-29 02:34:24] local.info: User login successful {"user_id":3,"email":"client@gmail.com","password":"client123","user_type":"client","name":"Test Client","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-29 02:34:24] local.info: Regular user redirected to user dashboard {"user_id":3,"email":"client@gmail.com"}
+[2025-07-29 02:34:54] local.info: User logout {"user_id":3,"email":"client@gmail.com","user_type":"client","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-29 02:34:54] local.info: Index page accessed {"ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","timestamp":"2025-07-29 02:34:54"}
+[2025-07-29 02:34:54] local.info: Services fetched successfully {"count":6}
+[2025-07-29 02:34:54] local.info: Products fetched successfully {"count":4}
+[2025-07-29 02:34:54] local.info: Testimonials fetched successfully {"count":3}
+[2025-07-29 02:35:11] local.info: Login attempt started {"email":"admin@joybeauty.com","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-29 02:35:11] local.info: User login successful {"user_id":1,"email":"admin@joybeauty.com","password":"admin123","user_type":"admin","name":"Admin Joy","ip_address":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-29 02:35:11] local.info: Admin user redirected to admin dashboard {"user_id":1,"email":"admin@joybeauty.com"}
